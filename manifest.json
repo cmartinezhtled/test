@@ -4,7 +4,7 @@
   "short_name": "#ScholemApp",
   "description": "Bienvenidos a #ScholemApp. Recuerda... mente sana en cuerpo sano :)",
   "background_color": "#2B2B2B",
-  "theme_color": "#F0DB4F",
+  "theme_color": "#4F5EF0",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest",
