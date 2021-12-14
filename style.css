@@ -65,10 +65,10 @@ p {
 }
 
 .Header nav {
-  padding: 2rem 0;
+  padding: 1.2rem 0;
   display: flex;
   justify-content: space-evenly;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .Main {
