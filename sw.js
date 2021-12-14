@@ -18,6 +18,7 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
+   		  console.log('Registro de cache');
         return cache.addAll(urlsToCache)
           .then(() => self.skipWaiting())
       })
