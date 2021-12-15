@@ -5,7 +5,7 @@ if ('serviceWorker' in navigator ) {
     .catch(err => console.warn('Error al tratar de registrar el sw', err))
 
   
-  });
+  
 }
 
 if ('Notification' in window && navigator.serviceWorker) {
