@@ -1,4 +1,4 @@
-if ('serviceWorker' in navigator && 'PushManager' in window) {
+if ('serviceWorker' in navigator ) {
   
   navigator.serviceWorker.register('./sw.js')
     .then(reg => console.log('Registro de SW exitoso', reg))
@@ -7,8 +7,4 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   Notification.requestPermission(function(status) {
     console.log('Notification permission status:', status);
   });
-}
-else {
-  console.warn('Push notifications no soportado');
-  pushButton.textContent = 'Push No Soportado';
 }
