@@ -42,7 +42,20 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
               })
               );
           }
-
+          else{
+            var pushButton = document.querySelector('.js-push-btn');
+            pushButton.disabled = false;
+            console.log('BOTON HABILITADO');
+      
+      
+            
+            
+            // Set your UI to show they have subscribed for
+            // push messages
+            pushButton.textContent = 'Disable Push Messages';
+            isPushEnabled = true;
+      
+          }
           
 
 
@@ -50,17 +63,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
         })
 
-      var pushButton = document.querySelector('.js-push-btn');
-      pushButton.disabled = false;
-      console.log('BOTON HABILITADO');
-
-
-      
-      
-      // Set your UI to show they have subscribed for
-      // push messages
-      pushButton.textContent = 'Disable Push Messages';
-      isPushEnabled = true;
     })
     .catch(function(err) {
       window.Demo.debug.log('Error during getSubscription()', err);
