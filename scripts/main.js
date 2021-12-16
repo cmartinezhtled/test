@@ -31,6 +31,8 @@ function initialiseUI() {
     // Set the initial subscription value
     swRegistration.pushManager.getSubscription()
     .then(function(subscription) {
+      console.log('subscription:'+subscription);
+
       isSubscribed = !(subscription === null);
   
       if (isSubscribed) {
