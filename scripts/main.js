@@ -1,3 +1,15 @@
+function initialiseUI() {
+  pushButton.addEventListener('click', function() {
+    pushButton.disabled = true;
+    if (isSubscribed) {
+      // TODO: Unsubscribe user
+    } else {
+      subscribeUser();
+    }
+  });
+
+
+
 if ('serviceWorker' in navigator && 'PushManager' in window) {
   console.log('Service Worker and Push is supported');
 
@@ -30,15 +42,6 @@ function updateBtn() {
 }
 
 
-function initialiseUI() {
-  pushButton.addEventListener('click', function() {
-    pushButton.disabled = true;
-    if (isSubscribed) {
-      // TODO: Unsubscribe user
-    } else {
-      subscribeUser();
-    }
-  });
 
 
   // Set the initial subscription value
