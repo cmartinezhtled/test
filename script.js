@@ -4,13 +4,13 @@ if ('serviceWorker' in navigator ) {
     .then(reg => console.log('Registro de SW exitoso', reg))
     .catch(err => console.warn('Error al tratar de registrar el sw', err))
 
-    if ('Notification' in window ) {
+   /* if ('Notification' in window ) {
       // Display the UI to let the user toggle notifications
       Notification.requestPermission(function(status) {
         console.log('Notification permission status:', status);
       });
     }
-  
+  */
 }
 
 
