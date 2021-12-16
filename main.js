@@ -41,6 +41,9 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
                 applicationServerKey,
               })
               .then(Notification.requestPermission().then(function(result) {
+
+                console.log('result:' + result);
+
                 if(result === 'granted') 
                 {
                     // Set your UI to show they have subscribed for
