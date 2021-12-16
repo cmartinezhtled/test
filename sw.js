@@ -78,17 +78,14 @@ self.addEventListener('notificationclick', function(e) {
 
 
 self.addEventListener('push', function(event) {
-  const message = JSON.parse(event.text());
-  const title = message.title;
-  const url = message.url;
-  const options = {
-    body: message.body,
-    icon: message.icon,
-    badge: message.badge,
-    data: url,
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
+  if (event.data) {
+    console.log('This push event has data: ', event.data.text());
+  } else {
+    console.log('This push event has no data.');
+  }
 });
+
+
 
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
