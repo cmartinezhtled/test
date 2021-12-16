@@ -34,7 +34,17 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
               })
               .then(sendSubscriptionToServer);
           }
-          sendSubscriptionToServer(subscription);
+
+          Notification.requestPermission().then(function(result) {
+            if(result === 'granted') {
+                console.log('SUBSCRIPCION HECHA');
+                randomNotification();
+            }
+          })
+
+
+
+
         })
         .catch(err => {
           console.log('getSubscription failed', err);
