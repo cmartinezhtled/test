@@ -50,11 +50,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 
       
-      // Keep your server in sync with the latest subscriptionId
-      sendSubscriptionToServer(subscription);
       
-      showCurlCommand(subscription);
-
       // Set your UI to show they have subscribed for
       // push messages
       pushButton.textContent = 'Disable Push Messages';
@@ -64,15 +60,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       window.Demo.debug.log('Error during getSubscription()', err);
     })
 
-    if (!subscription) {
-      // We aren’t subscribed to push, so set UI
-      // to allow the user to enable push
-        pushButton.disabled = true;  //esto vuela
-        console.log('BOTON DESHABILITADO');
-
-
-      return;
-    }
 
     
   });
