@@ -48,6 +48,8 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
                 }
                 else{
+                  console.log('NO HAY SUBSCRIPCION');
+
                   pushButton.textContent = 'Enable Push Messages';
 
                 }
