@@ -23,7 +23,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     .then(function(subscription) {
       // Enable any UI which subscribes / unsubscribes from
       // push messages.
-      const applicationServerKey = '';
+      const applicationServerKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
       swRegistration.pushManager.getSubscription()
         .then(subscription => {
           const isSubscribed = !(subscription === null);
@@ -62,6 +62,4 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   });
 
 
-const webpush = require('web-push');
-const vapidKeys = webpush.generateVAPIDKeys();
-console.log(vapidKeys);
+
