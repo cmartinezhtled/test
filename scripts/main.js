@@ -27,20 +27,23 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       swRegistration.pushManager.getSubscription()
         .then(subscription => {
           const isSubscribed = !(subscription === null);
-          if (!isSubscribed) {
+          if (!isSubscribed) 
+          {
             return swRegistration.pushManager.subscribe({
                 userVisibleOnly: true,
                 applicationServerKey,
               })
-              .then(sendSubscriptionToServer);
+              .then(Notification.requestPermission().then(function(result) {
+                if(result === 'granted') 
+                {
+                    console.log('SUBSCRIPCION HECHA');
+                    randomNotification();
+                }
+              })
+              );
           }
 
-          Notification.requestPermission().then(function(result) {
-            if(result === 'granted') {
-                console.log('SUBSCRIPCION HECHA');
-                randomNotification();
-            }
-          })
+          
 
 
 
