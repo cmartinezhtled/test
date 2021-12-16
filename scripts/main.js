@@ -1,6 +1,11 @@
 if ('serviceWorker' in navigator && 'PushManager' in window) {
   console.log('Service Worker and Push is supported');
 
+  var pushButton = document.querySelector('.js-push-btn');
+  pushButton.disabled = false;
+  console.log('BOTON HABILITADO');
+
+
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) {
     console.log('Service Worker is registered', swReg);
@@ -14,6 +19,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 } else {
   console.warn('Push messaging is not supported');
   pushButton.textContent = 'Push Not Supported';
+  pushButton.disabled = true;
+
 }
 
 // We need the service worker registration to check for a subscription
@@ -56,17 +63,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
               })
               );
           }
-          else{
-            var pushButton = document.querySelector('.js-push-btn');
-            pushButton.disabled = false;
-            console.log('BOTON HABILITADO');
-      
-      
-            
-            
-      
-          }
-          
 
 
 
