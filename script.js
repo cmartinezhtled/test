@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator ) {
 
 if ('Notification' in window ) {
   // Display the UI to let the user toggle notifications
-  Notification.requestPermission(function(status) {
+  Notification.requestPermission().then(function(status) {
     console.log('Notification permission status:', status);
   });
 }
