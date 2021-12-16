@@ -36,8 +36,20 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
               .then(Notification.requestPermission().then(function(result) {
                 if(result === 'granted') 
                 {
+                    // Set your UI to show they have subscribed for
+                    // push messages
+                    pushButton.textContent = 'Disable Push Messages';
+                    isPushEnabled = true;
+
+
                     console.log('SUBSCRIPCION HECHA');
                     randomNotification();
+
+
+                }
+                else{
+                  pushButton.textContent = 'Enable Push Messages';
+
                 }
               })
               );
@@ -50,10 +62,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       
             
             
-            // Set your UI to show they have subscribed for
-            // push messages
-            pushButton.textContent = 'Disable Push Messages';
-            isPushEnabled = true;
       
           }
           
