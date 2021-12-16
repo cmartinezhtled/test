@@ -23,6 +23,27 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     .then(function(subscription) {
       // Enable any UI which subscribes / unsubscribes from
       // push messages.
+      const applicationServerKey = '';
+      swRegistration
+        .pushManager
+        .getSubscription()
+        .then(subscription => {
+          const isSubscribed = !(subscription === null);
+          if (!isSubscribed) {
+            return swRegistration.pushManager
+              .subscribe({
+                userVisibleOnly: true,
+                applicationServerKey,
+              })
+              .then(sendSubscriptionToServer);
+          }
+          sendSubscriptionToServer(subscription);
+        })
+        .catch(err => {
+          console.log('getSubscription failed', err);
+        });
+
+
       var pushButton = document.querySelector('.js-push-btn');
       pushButton.disabled = false;
       console.log('BOTON HABILITADO');
