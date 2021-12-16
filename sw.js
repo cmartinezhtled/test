@@ -75,11 +75,23 @@ self.addEventListener('notificationclick', function(e) {
     notification.close();
   }
 });
-/*
-self.addEventListener('notificationclose', function(e) {
-  var notification = e.notification;
-  var primaryKey = notification.data.primaryKey;
 
-  console.log('Closed notification: ' + primaryKey);
+
+self.addEventListener('push', function(event) {
+  const message = JSON.parse(event.data.text());
+  const title = message.title;
+  const url = message.url;
+  const options = {
+    body: message.body,
+    icon: message.icon,
+    badge: message.badge,
+    data: url,
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
 });
-*/
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  event.waitUntil(clients.openWindow(event.notification.data));
+});
+
