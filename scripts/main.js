@@ -33,9 +33,9 @@ const applicationServerPublicKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7M
 
 function updateBtn() {
   if (isSubscribed) {
-    pushButton.textContent = 'Disable Push Messaging';
+    pushButton.textContent = '1Disable Push Messaging';
   } else {
-    pushButton.textContent = 'Enable Push Messaging';
+    pushButton.textContent = '1Enable Push Messaging';
   }
 
   pushButton.disabled = false;
