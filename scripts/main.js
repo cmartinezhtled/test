@@ -17,7 +17,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 }
 
 function initialiseUI() {
-  console.warn('initialiseUI...............');
+  console.log('initialiseUI...............');
 
   pushButton.addEventListener('click', function() {
     pushButton.disabled = true;
