@@ -28,7 +28,7 @@ function initialiseUI() {
     }
   });
 
-
+}
 
 const applicationServerPublicKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
 
@@ -59,5 +59,5 @@ function updateBtn() {
 
     updateBtn();
   });
-}
+
 
