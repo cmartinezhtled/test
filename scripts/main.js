@@ -50,7 +50,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
         })
 
-
       var pushButton = document.querySelector('.js-push-btn');
       pushButton.disabled = false;
       console.log('BOTON HABILITADO');
@@ -70,6 +69,22 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
     
   });
+
+
+  function randomNotification() {
+    var randomItem = Math.floor(Math.random()*games.length);
+    var notifTitle = 'titulo de la noti';
+    var notifBody = 'Creado por cm';
+    var notifImg = 'img/icon_32.png';
+    var options = {
+        body: notifBody,
+        icon: notifImg
+    }
+    var notif = new Notification(notifTitle, options);
+    setTimeout(randomNotification, 30000);
+}
+
+
 
 
 
