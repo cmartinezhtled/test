@@ -78,7 +78,7 @@ self.addEventListener('notificationclick', function(e) {
 
 
 self.addEventListener('push', function(event) {
-  const message = JSON.parse(event.data.text());
+  const message = JSON.parse(event.text());
   const title = message.title;
   const url = message.url;
   const options = {
