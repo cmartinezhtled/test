@@ -97,5 +97,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 
 
-
-
+document.getElementById("js-push-btn").addEventListener("click", function() {
+  document.getElementById("js-push-btn").innerHTML = "Hello World";
+});
