@@ -49,9 +49,6 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 
         })
-        .catch(err => {
-          console.log('getSubscription failed', err);
-        });
 
 
       var pushButton = document.querySelector('.js-push-btn');
