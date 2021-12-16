@@ -25,11 +25,15 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       // push messages.
       var pushButton = document.querySelector('.js-push-btn');
       pushButton.disabled = false;
+      console.log('BOTON HABILITADO');
+
 
       if (!subscription) {
         // We aren’t subscribed to push, so set UI
         // to allow the user to enable push
           pushButton.disabled = true;  //esto vuela
+          console.log('BOTON DESHABILITADO');
+
 
         return;
       }
