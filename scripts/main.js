@@ -72,7 +72,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 
   function randomNotification() {
-    var randomItem = Math.floor(Math.random()*games.length);
+    var randomItem = Math.floor(Math.random() * 100) + 1;
     var notifTitle = 'titulo de la noti';
     var notifBody = 'Creado por cm';
     var notifImg = 'img/icon_32.png';
