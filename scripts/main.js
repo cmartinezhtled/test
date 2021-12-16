@@ -28,6 +28,20 @@ function initialiseUI() {
     }
   });
 
+    // Set the initial subscription value
+    swRegistration.pushManager.getSubscription()
+    .then(function(subscription) {
+      isSubscribed = !(subscription === null);
+  
+      if (isSubscribed) {
+        console.log('User IS subscribed.');
+      } else {
+        console.log('User is NOT subscribed.');
+      }
+  
+      updateBtn();
+    });
+  
 }
 
 const applicationServerPublicKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
@@ -46,18 +60,5 @@ function updateBtn() {
 
 
 
-  // Set the initial subscription value
-  swRegistration.pushManager.getSubscription()
-  .then(function(subscription) {
-    isSubscribed = !(subscription === null);
-
-    if (isSubscribed) {
-      console.log('User IS subscribed.');
-    } else {
-      console.log('User is NOT subscribed.');
-    }
-
-    updateBtn();
-  });
 
 
