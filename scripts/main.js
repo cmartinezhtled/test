@@ -19,6 +19,17 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 const applicationServerPublicKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
 
 
+function updateBtn() {
+  if (isSubscribed) {
+    pushButton.textContent = 'Disable Push Messaging';
+  } else {
+    pushButton.textContent = 'Enable Push Messaging';
+  }
+
+  pushButton.disabled = false;
+}
+
+
 function initialiseUI() {
   // Set the initial subscription value
   swRegistration.pushManager.getSubscription()
@@ -35,12 +46,3 @@ function initialiseUI() {
   });
 }
 
-function updateBtn() {
-  if (isSubscribed) {
-    pushButton.textContent = 'Disable Push Messaging';
-  } else {
-    pushButton.textContent = 'Enable Push Messaging';
-  }
-
-  pushButton.disabled = false;
-}
