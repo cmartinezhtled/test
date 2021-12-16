@@ -82,6 +82,9 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     }
     var notif = new Notification(notifTitle, options);
     setTimeout(randomNotification, 30000);
+
+    console.log('NOTI ENVIADA');
+
 }
 
 
