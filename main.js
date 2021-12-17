@@ -57,7 +57,7 @@ function initialiseUI () {
   );
 }
 
-
+/*
 function notifyMe() {
   // Comprobemos si el navegador admite notificaciones...
   if (!("Notification" in window)) {
@@ -85,7 +85,7 @@ function notifyMe() {
 }
 
 
-
+*/
 
   
 
