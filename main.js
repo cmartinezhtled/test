@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
   console.log('BOTON HABILITADO');
 
 
-  
+
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) 
   {
@@ -28,7 +28,6 @@ else
   console.warn('Push messaging is not supported');
   pushButton.textContent = 'Push Not Supported';
   pushButton.disabled = true;
-
 }
 
 
