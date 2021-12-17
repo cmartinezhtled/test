@@ -15,9 +15,9 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
     swRegistration = swReg;
     initialiseUI(); // push subscription 
   })
-  .catch(function(error) {
-    console.error('Service Worker Error', error);
-  });
+  .catch(
+    console.log('Service Worker Error')
+  );
 } else {
   console.warn('Push messaging is not supported');
   pushButton.textContent = 'Push Not Supported';
