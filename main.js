@@ -89,6 +89,7 @@ function notifyMe() {
     });
   }
 
+  
   console.log('**DENEGADO**');
 
   // Por fin, si el usuario ha denegado las notificaciones y usted
