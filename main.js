@@ -72,7 +72,7 @@ function initialiseUI () {
     JSON.parse(subscription),
     JSON.stringify({
       title: 'Title',
-      icon: 'https://your-site.com/assets/push-icon.png',
+      icon: 'push-icon.png',
       body: 'Body',
       url: 'https://your-site.com/url-to-open',
     })
