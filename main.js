@@ -69,7 +69,10 @@ function initialiseUI () {
 
 function notifyMe() {
 
-  console.log('LO QUE LEE Notification.requestPermission():' + Notification.requestPermission().then);
+  Notification.requestPermission().then(function (a){console.log('LO QUE LEE Notification.requestPermission():' + a)
+                  }
+  
+  );
 
   // Comprobemos si el navegador admite notificaciones
   if (!("Notification" in window)) 
