@@ -14,8 +14,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
 
 
     swRegistration = swReg;
-    //initialiseUI(); // push subscription 
-    notifyMe(); // notificar recibir push
+    initialiseUI(); // push subscription 
+    //notifyMe(); // notificar recibir push
   })
   .catch(function(swRegerr) 
   {
