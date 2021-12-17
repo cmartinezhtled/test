@@ -30,6 +30,8 @@ function initialiseUI () {
   // We need the service worker registration to check for a subscription
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     
+    console.log('ENTRE A REGISTRACION');
+
     // Do we already have a push message subscription?
     serviceWorkerRegistration.pushManager.getSubscription()
       .then(function(subscription) {
