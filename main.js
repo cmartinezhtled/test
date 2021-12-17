@@ -30,12 +30,11 @@ else
   pushButton.disabled = true;
 }
 
-document.getElementById("boton")
-    .addEventListener("click", function(event) {
-        alert("Submit button is clicked!");
-        event.preventDefault();
-    });
-
+/////// checkea el botón presionado
+document.getElementById("boton").onclick = function(event) {
+  alert("Submit button is clicked!");
+  event.preventDefault();
+}
 
 
 function initialiseUI () {
