@@ -33,6 +33,8 @@ function initialiseUI () {
 
     Notification.requestPermission().then(function(result) {
         if(result === 'granted') {
+          console.log('GRANTED');
+
             randomNotification();
         }
     });
