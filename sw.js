@@ -61,37 +61,3 @@ self.addEventListener('fetch', e => {
   )
 })
 
-self.addEventListener('notificationclick', function(e) {
-  var notification = e.notification;
-  var primaryKey = notification.data.primaryKey;
-  var action = e.action;
-
-  if (action === 'close') {
-    notification.close();
-  } else {
-    clients.openWindow('http://www.scholem.edu.ar');
-    notification.close();
-  }
-});
-
-
-self.addEventListener('push', function(event) {
-  if (event.data) {
-    console.log('This push event has data: ', event.data.text());
-  } else {
-    console.log('This push event has no data.');
-  }
-
-  const promiseChain = self.registration.showNotification('Hello, World.');
-
-  event.waitUntil(promiseChain);
-
-});
-
-
-
-self.addEventListener('notificationclick', function(event) {
-  event.notification.close();
-  event.waitUntil(clients.openWindow(event.notification.data));
-});
-
