@@ -14,8 +14,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
 
 
     swRegistration = swReg;
-    initialiseUI(); // push subscription 
-    //notifyMe(); // notificar recibir push
+    //initialiseUI(); // push subscription 
+    notifyMe(); // notificar recibir push
   })
   .catch(function(swRegerr) 
   {
@@ -56,4 +56,36 @@ function initialiseUI () {
 
   );
 }
+
+
+function notifyMe() {
+  // Comprobemos si el navegador admite notificaciones...
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  // Comprobemos si ya se han otorgado permisos de notificación
+  else if (Notification.permission === "granted") {
+    // Si está bien, creemos una notificación
+    var notification = new Notification("Hi there!");
+  }
+
+  // De lo contrario, debemos pedir permiso al usuario
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(function (permission) {
+      // Si el usuario acepta, creemos una notificación
+      if (permission === "granted") {
+        var notification = new Notification("Hi there!");
+      }
+    });
+  }
+
+  // Por fin, si el usuario ha denegado las notificaciones y usted
+  // quiero ser respetuoso, no hay necesidad de molestarlos más.
+}
+
+
+
+
+  
 
