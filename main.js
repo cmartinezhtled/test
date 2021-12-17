@@ -25,67 +25,68 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
 console.log('ENTRO A REGISTRACION');
 
-// We need the service worker registration to check for a subscription
-navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-  
-  // Do we already have a push message subscription?
-  serviceWorkerRegistration.pushManager.getSubscription()
-    .then(function(subscription) {
-      // Enable any UI which subscribes / unsubscribes from
-      // push messages.
-      const applicationServerKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
-      swRegistration.pushManager.getSubscription()
-        .then(subscription => {
-          const isSubscribed = !(subscription === null);
-          if (!isSubscribed) 
-          {
-            return swRegistration.pushManager.subscribe({
-                userVisibleOnly: true,
-                applicationServerKey,
-              })
-              .then(Notification.requestPermission().then(function(result) {
-
-                console.log('result:' + result);
-
-                if(result === 'granted') 
-                {
-                    // Set your UI to show they have subscribed for
-                    // push messages
-                    pushButton.textContent = 'Disable Push Messages';
-                    isPushEnabled = true;
-
-                  
-
-
-                    console.log('SUBSCRIPCION HECHA');
-                    randomNotification();
-
-
-                }
-                else{
-                  console.log('NO HAY SUBSCRIPCION');
-
-                  pushButton.textContent = 'Enable Push Messages';
-
-                }
-              })
-              );
-          }
-
-
-
-
-        })
-
-    })
-    .catch(function(err) {
-      console.log('Error during Subscription', err);
-    })
-
-
+function initialiseUI () {
+  // We need the service worker registration to check for a subscription
+  navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     
-  });
+    // Do we already have a push message subscription?
+    serviceWorkerRegistration.pushManager.getSubscription()
+      .then(function(subscription) {
+        // Enable any UI which subscribes / unsubscribes from
+        // push messages.
+        const applicationServerKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
+        swRegistration.pushManager.getSubscription()
+          .then(subscription => {
+            const isSubscribed = !(subscription === null);
+            if (!isSubscribed) 
+            {
+              return swRegistration.pushManager.subscribe({
+                  userVisibleOnly: true,
+                  applicationServerKey,
+                })
+                .then(Notification.requestPermission().then(function(result) {
 
+                  console.log('result:' + result);
+
+                  if(result === 'granted') 
+                  {
+                      // Set your UI to show they have subscribed for
+                      // push messages
+                      pushButton.textContent = 'Disable Push Messages';
+                      isPushEnabled = true;
+
+                    
+
+
+                      console.log('SUBSCRIPCION HECHA');
+                      randomNotification();
+
+
+                  }
+                  else{
+                    console.log('NO HAY SUBSCRIPCION');
+
+                    pushButton.textContent = 'Enable Push Messages';
+
+                  }
+                })
+                );
+            }
+
+
+
+
+          })
+
+      })
+      .catch(function(err) {
+        console.log('Error during Subscription', err);
+      })
+
+
+      
+    });
+  }
 
   function randomNotification() {
     var randomItem = Math.floor(Math.random() * 100) + 1;
