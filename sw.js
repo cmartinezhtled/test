@@ -72,7 +72,7 @@ self.addEventListener('push', function(event) {
   const title = message1.title;
   const url = message1.url;
   const options = {
-    body: message1.body,
+    body: 'LLEGO UN MSG',
     icon: './img/icon_32.png',
     badge: message1.badge,
     data: url,
