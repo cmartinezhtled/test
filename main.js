@@ -77,7 +77,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
     })
     .catch(function(err) {
-      console.log('Error during getSubscription()', err);
+      console.log('Error during Subscription', err);
     })
 
 
