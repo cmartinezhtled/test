@@ -19,7 +19,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
   .catch(function(swRegerr) 
   {
     console.warn('Service Worker Error', swRegerr);
-  })
+  });
 }   
 else 
 {
@@ -35,7 +35,7 @@ function initialiseUI () {
 
   Notification.requestPermission().then(function(result) 
   {
-    console.log('RESULT' + result);
+    console.log('RESULT_SI' + result);
 
     if(result === 'granted') 
     {
@@ -47,7 +47,13 @@ function initialiseUI () {
       console.log('DENIED');
 
     }
-  });
+  })
+  .catch(function(result)
+  {
+    console.log('RESULT_NO' + result);
+  }
+
+  );
 }
 
 
