@@ -1,4 +1,5 @@
-if ('serviceWorker' in navigator && 'PushManager' in window) {
+if ('serviceWorker' in navigator && 'PushManager' in window) 
+{
   console.log('Service Worker and Push is supported');
 
   var pushButton = document.querySelector('.js-push-btn');
@@ -7,7 +8,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
 
   navigator.serviceWorker.register('sw.js')
-  .then(function(swReg) {
+  .then(function(swReg) 
+  {
     console.log('Service Worker is registered!!', swReg);
 
     //console.log('hola');
@@ -15,10 +17,13 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
     swRegistration = swReg;
     initialiseUI(); // push subscription 
   })
-  .catch(
-    console.log('Service Worker Error')
-  );
-} else {
+  .catch(function(swRegerr) 
+  {
+    console.log('Service Worker Error', swRegerr);
+  })
+}   
+else 
+{
   console.warn('Push messaging is not supported');
   pushButton.textContent = 'Push Not Supported';
   pushButton.disabled = true;
