@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) {
-    console.log('Service Worker is registered', swReg);
+    console.log('Service Worker is registered!!', swReg);
 
     swRegistration = swReg;
     initialiseUI();
@@ -53,6 +53,8 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
                     // push messages
                     pushButton.textContent = 'Disable Push Messages';
                     isPushEnabled = true;
+
+                  
 
 
                     console.log('SUBSCRIPCION HECHA');
