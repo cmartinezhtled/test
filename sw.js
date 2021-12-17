@@ -67,13 +67,13 @@ self.addEventListener('fetch', e => {
 self.addEventListener('push', function(event) {
   console.log('EVENT:' + event.data.text());
 
-  const message = JSON.parse(event.data.text());
-  const title = message.title;
-  const url = message.url;
+  const message1 = JSON.parse(event.data.text());
+  const title = message1.title;
+  const url = message1.url;
   const options = {
-    body: message.body,
-    icon: message.icon,
-    badge: message.badge,
+    body: message1.body,
+    icon: message1.icon,
+    badge: message1.badge,
     data: url,
   };
   event.waitUntil(self.registration.showNotification(title, options));
