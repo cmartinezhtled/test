@@ -68,6 +68,7 @@ function initialiseUI () {
 
 
 function notifyMe() {
+  
   console.log('LO QUE LEE Notification.requestPermission():' + Notification.requestPermission);
 
   // Comprobemos si el navegador admite notificaciones
