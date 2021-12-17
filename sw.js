@@ -75,7 +75,8 @@ self.addEventListener('push', function(event) {
   const options = {
     body: 'ESTE ES UN NUEVO MENSAJE',
     icon: './img/icon_32.png',
-    badge: message.badge,
+    //badge: message.badge, //  a USVString containing the URL of an image to represent the notification when there is not enough space to display the notification itself such as for example, the Android Notification Bar. On Android devices, the badge should accommodate devices up to 4x resolution, about 96 by 96 px, and the image will be automatically masked.
+    badge: './img/icon_32.png',
     data: url,
   };
   event.waitUntil(self.registration.showNotification(title, options));
