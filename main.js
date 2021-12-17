@@ -33,7 +33,7 @@ else
 /////// checkea el botón presionado
 document.getElementById("boton").onclick = function(event) {
   //alert("Submit button is clicked!");
-  console.log('ENTRO A NOTIFYME--->');
+  console.log('ENTRO A notifyMe--->');
   notifyMe();
   event.preventDefault();
 }
