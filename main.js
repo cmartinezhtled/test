@@ -7,6 +7,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
   console.log('BOTON HABILITADO');
 
 
+  
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) 
   {
