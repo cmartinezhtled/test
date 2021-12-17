@@ -57,7 +57,7 @@ function initialiseUI () {
 }
 
 
-function notifyMe() {
+public function notifyMe() {
   // Comprobemos si el navegador admite notificaciones
   if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");
