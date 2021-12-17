@@ -14,7 +14,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
 
 
     swRegistration = swReg;
-    initialiseUI(); // push subscription 
+    //initialiseUI(); // push subscription 
+    notifyMe(); // notificar recibir push
   })
   .catch(function(swRegerr) 
   {
@@ -57,7 +58,7 @@ function initialiseUI () {
 }
 
 
-public function notifyMe() {
+function notifyMe() {
   // Comprobemos si el navegador admite notificaciones
   if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");
