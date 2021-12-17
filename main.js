@@ -88,10 +88,11 @@ function notifyMe() {
       }
     });
   }
-
+  else
+  {
+    console.log('**DENEGADO**');
   
-  console.log('**DENEGADO**');
-
   // Por fin, si el usuario ha denegado las notificaciones y usted
   // quiero ser respetuoso, no hay necesidad de molestarlos más.
+  }
 }
