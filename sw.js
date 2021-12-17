@@ -61,31 +61,3 @@ self.addEventListener('fetch', e => {
   )
 })
 
-var button = document.getElementById(".js-push-btn");
-button.addEventListener('click', function(e) {
-  console.log('ENTRE A REGISTRACION');
-
-  Notification.requestPermission().then(function(result) {
-      if(result === 'granted') {
-        console.log('GRANTED');
-
-          randomNotification();
-      }
-  });
-});
-
-function randomNotification() {
-  var randomItem = Math.floor(Math.random() * 100) + 1;
-  var notifTitle = 'titulo de la noti';
-  var notifBody = 'Creado por cm';
-  var notifImg = 'img/icon_32.png';
-  var options = {
-      body: notifBody,
-      icon: notifImg
-  }
-  var notif = new Notification(notifTitle, options);
-  setTimeout(randomNotification, 30000);
-
-  console.log('NOTI ENVIADA');
-
-}
