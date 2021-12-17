@@ -61,7 +61,7 @@ self.addEventListener('fetch', e => {
   )
 })
 
-var button = document.getElementById("js-push-btn");
+var button = document.getElementById(".js-push-btn");
 button.addEventListener('click', function(e) {
   console.log('ENTRE A REGISTRACION');
 
