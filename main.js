@@ -27,8 +27,7 @@ console.log('ENTRO A REGISTRACION');
 
 // We need the service worker registration to check for a subscription
 navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-  console.warn('INICIO REGISTRACION');
-
+  
   // Do we already have a push message subscription?
   serviceWorkerRegistration.pushManager.getSubscription()
     .then(function(subscription) {
@@ -78,7 +77,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
     })
     .catch(function(err) {
-      window.Demo.debug.log('Error during getSubscription()', err);
+      console.log('Error during getSubscription()', err);
     })
 
 
