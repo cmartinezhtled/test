@@ -23,6 +23,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
 }
 
+console.log('ENTRO A REGISTRACION');
+
 // We need the service worker registration to check for a subscription
 navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   console.warn('INICIO REGISTRACION');
