@@ -65,6 +65,8 @@ self.addEventListener('fetch', e => {
 
 
 self.addEventListener('push', function(event) {
+  console.log(event.data.text);
+
   const message = JSON.parse(event.data.text());
   const title = message.title;
   const url = message.url;
