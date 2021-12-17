@@ -68,13 +68,14 @@ self.addEventListener('fetch', e => {
 self.addEventListener('push', function(event) {
   console.log('EVENTO DESDE EL PUSH:' + event.data.text());
 
-  const message1 = JSON.parse(event.data.text());
-  const title = message1.title;
-  const url = message1.url;
+  const message = JSON.parse(event.data.text());
+  //const title = message.title;
+  const title = message.title;
+  const url = 'http://www.scholem.edu.ar';
   const options = {
-    body: 'LLEGO UN MSG',
+    body: 'ESTE ES UN NUEVO MENSAJE',
     icon: './img/icon_32.png',
-    badge: message1.badge,
+    badge: message.badge,
     data: url,
   };
   event.waitUntil(self.registration.showNotification(title, options));
