@@ -33,7 +33,19 @@ else
 function initialiseUI () {
   console.log('ENTRO A SUSCRIPCION--->');
 
+  Notification.requestPermission().then(function(result) 
+  {
+    if(result === 'granted') 
+    {
+        //randomNotification();
+        console.log('GRANTED');
+    }
+    else
+    {
+      console.log('DENIED');
 
+    }
+  });
 }
 
 
