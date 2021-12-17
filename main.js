@@ -27,7 +27,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
 
 function initialiseUI () {
-  console.log('ENTRO A SUSCRIPCION');
+  console.log('ENTRO A SUSCRIPCION--->');
 
   const applicationServerKey = 'BLDUWLUIaRb8OiTV7PqAsnwopoYUbiUTP3zF-9tbxW7MwxisVK0LoZbKYD11btoDfeKaOLQ1KC5Ot_v4XBMBwjc';
   swRegistration
