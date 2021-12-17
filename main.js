@@ -39,7 +39,7 @@ document.getElementById("boton").onclick = function(event) {
 
 function initialiseUI () {
   console.log('ENTRO A SUSCRIPCION--->');
-
+/*
   Notification.requestPermission().then(function(result) 
   {
     console.log('RESULT_SI' + result);
@@ -61,4 +61,5 @@ function initialiseUI () {
   }
 
   );
+*/
 }
