@@ -88,6 +88,9 @@ function initialiseUI () {
 
 
       
+    })
+    .catch(function(err) {
+      console.log('Service worker no está ready', err);
     });
   }
 
