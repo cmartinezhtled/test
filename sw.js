@@ -70,7 +70,7 @@ self.addEventListener('push', function(event) {
 
   const message = JSON.parse(event.data.text());
   //const title = message.title;
-  const title = 'NUEVO MENSAJE DESDE SCHOLEM';
+  const title = 'Desde ScholemApp';
   const url = 'http://www.scholem.edu.ar';
   const options = {
     body: event.data.text(),
