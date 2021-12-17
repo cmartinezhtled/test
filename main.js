@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator && 'PushManager' in window) {
-  console.log('Service Worker and Push is supported!!');
+  console.log('Service Worker and Push is supported');
 
   var pushButton = document.querySelector('.js-push-btn');
   pushButton.disabled = false;
