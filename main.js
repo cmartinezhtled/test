@@ -10,9 +10,8 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) 
   {
-    console.log('Service Worker is registered!!', swReg);
+    console.log('Service Worker is registered!! *** REGISTRADO***', swReg);
 
-    console.log('Todo registrado', swReg);
 
     swRegistration = swReg;
     initialiseUI(); // push subscription 
