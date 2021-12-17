@@ -61,3 +61,23 @@ self.addEventListener('fetch', e => {
   )
 })
 
+
+
+
+self.addEventListener('push', function(event) {
+  const message = JSON.parse(event.data.text());
+  const title = message.title;
+  const url = message.url;
+  const options = {
+    body: message.body,
+    icon: message.icon,
+    badge: message.badge,
+    data: url,
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  event.waitUntil(clients.openWindow(event.notification.data));
+});
