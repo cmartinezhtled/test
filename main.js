@@ -19,7 +19,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window)
   })
   .catch(function(swRegerr) 
   {
-    console.log('Service Worker Error', swRegerr);
+    console.warn('Service Worker Error', swRegerr);
   })
 }   
 else 
