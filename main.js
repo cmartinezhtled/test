@@ -69,28 +69,33 @@ function initialiseUI () {
 
 function notifyMe() {
   // Comprobemos si el navegador admite notificaciones
-  if (!("Notification" in window)) {
+  if (!("Notification" in window)) 
+  {
     alert("This browser does not support desktop notification");
   }
 
   // Comprobemos si ya se han otorgado permisos de notificación
-  else if (Notification.requestPermission() === "granted") {
+  else if (Notification.requestPermission() === "granted") 
+  {
     // Si está bien, creemos una notificación
     console.log('**YA TIENE PERMISOS GRANTED**');
   }
 
   // De lo contrario, debemos pedir permiso al usuario
-  else if (Notification.requestPermission() !== "denied") {
-    Notification.requestPermission().then(function (permission) {
+  else if (Notification.requestPermission() !== "denied") 
+  {
+    Notification.requestPermission().then(function (permission) 
+    {
       // Si el usuario acepta, creemos una notificación
-      if (permission === "granted") {
+      if (permission === "granted") 
+      {
         console.log('**USUARIO DIO GRANTED**');
       }
     });
   }
   else
   {
-    console.log('**DENEGADO**');
+    console.log('**EL USUARIO DENEGO**');
   
   // Por fin, si el usuario ha denegado las notificaciones y usted
   // quiero ser respetuoso, no hay necesidad de molestarlos más.
