@@ -35,6 +35,8 @@ function initialiseUI () {
 
   Notification.requestPermission().then(function(result) 
   {
+    console.log('RESULT' + result);
+
     if(result === 'granted') 
     {
         //randomNotification();
