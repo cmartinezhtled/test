@@ -30,6 +30,13 @@ else
   pushButton.disabled = true;
 }
 
+document.getElementById("boton")
+    .addEventListener("click", function(event) {
+        alert("Submit button is clicked!");
+        event.preventDefault();
+    });
+
+
 
 function initialiseUI () {
   console.log('ENTRO A SUSCRIPCION--->');
