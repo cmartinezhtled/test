@@ -5,7 +5,7 @@
   "main": "codigo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tareas": "node -v && npm audit && node index.htm"
+    "tareas": "node -v && npm audit && node codigo.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,6 @@
     "express": "^4.17.2",
     "jquery": "^3.6.0",
     "mysql": "github:mysqljs/mysql"
-  }
+  },
+  "devDependencies": {}
 }
