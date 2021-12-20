@@ -2,7 +2,7 @@
   "name": "pwa",
   "version": "1.0.0",
   "description": "ScholemApp",
-  "main": "index.htm",
+  "main": "codigo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tareas": "node -v && npm audit && node index.htm"
