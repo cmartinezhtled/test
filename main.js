@@ -55,8 +55,8 @@ function initialiseUI () {
         //randomNotification();
         console.log('REQ PERMI: GRANTED');
 
-        subscripcion = subscribeUserToPush();
-        console.log('SUBSCRIPCION:' + subscripcion);
+        code_subscripcion = JSON.stringify(subscribeUserToPush());
+        console.log('SUBSCRIPCION:' + code_subscripcion);
     
 
     }
