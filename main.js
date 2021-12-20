@@ -56,25 +56,7 @@ function initialiseUI () {
         console.log('REQ PERM: GRANTED');
 
         subscribeUserToPush();
-        function subscribeUserToPush() {
-          console.log('SUBSCRIPTION');
-
-          return navigator.serviceWorker.register('./sw.js')
-          .then(function(registration) {
-            const subscribeOptions = {
-              userVisibleOnly: true,
-              applicationServerKey: urlBase64ToUint8Array(
-                'BLefJtEydR57a4LR3tCWJPyt7mPH0OawfjpcVRnSiwdzf2glDu35Pg6eI9KQOQTWO4qHwWYgE5-b1OtCW4GDlp8'
-              )
-            };
         
-            return registration.pushManager.subscribe(subscribeOptions);
-          })
-          .then(function(pushSubscription) {
-            console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
-            return pushSubscription;
-          });
-        }
     
 
     }
@@ -97,9 +79,29 @@ function initialiseUI () {
 }
 
 
+function subscribeUserToPush() {
+  console.log('SUBSCRIPTION');
+
+  return navigator.serviceWorker.register('./sw.js')
+  .then(function(registration) {
+    const subscribeOptions = {
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(
+        'BLefJtEydR57a4LR3tCWJPyt7mPH0OawfjpcVRnSiwdzf2glDu35Pg6eI9KQOQTWO4qHwWYgE5-b1OtCW4GDlp8'
+      )
+    };
+
+    return registration.pushManager.subscribe(subscribeOptions);
+  })
+  .then(function(pushSubscription) {
+    console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+    return pushSubscription;
+  });
+}
+
+
+
 function notifyMe() {
-
-
   // Comprobemos si el navegador admite notificaciones
   if (("Notification" in window)) 
   {
