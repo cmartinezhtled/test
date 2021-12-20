@@ -1,0 +1,11 @@
+{
+  "name": "scholemapp",
+  "version": "1.0.0",
+  "description": "ScholemApp",
+  "main": "index.htm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cmartinez",
+  "license": "ISC"
+}
