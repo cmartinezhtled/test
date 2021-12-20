@@ -1,16 +1,23 @@
 {
-  "dependencies": {
-    "boostrap": "^2.0.0",
-    "bootstrap": "^5.1.3",
-    "jquery": "^3.6.0"
-  },
-  "name": "pwa4",
+  "name": "pwa",
   "version": "1.0.0",
   "description": "ScholemApp",
   "main": "index.htm",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmartinezhtled/test.git"
+  },
   "author": "cmartinez",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmartinezhtled/test/issues"
+  },
+  "homepage": "https://github.com/cmartinezhtled/test#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  }
 }
