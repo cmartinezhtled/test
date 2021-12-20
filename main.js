@@ -54,6 +54,29 @@ function initialiseUI () {
     {
         //randomNotification();
         console.log('REQ PERMISION: GRANTED');
+
+        subscribeUserToPush();
+        function subscribeUserToPush() {
+          console.log('SUBSCRIPTION');
+
+          return navigator.serviceWorker.register('./sw.js')
+          .then(function(registration) {
+            const subscribeOptions = {
+              userVisibleOnly: true,
+              applicationServerKey: urlBase64ToUint8Array(
+                'BLefJtEydR57a4LR3tCWJPyt7mPH0OawfjpcVRnSiwdzf2glDu35Pg6eI9KQOQTWO4qHwWYgE5-b1OtCW4GDlp8'
+              )
+            };
+        
+            return registration.pushManager.subscribe(subscribeOptions);
+          })
+          .then(function(pushSubscription) {
+            console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+            return pushSubscription;
+          });
+        }
+    
+
     }
     else
     {
@@ -66,32 +89,9 @@ function initialiseUI () {
     console.log('RESULT_NO' + result);
   }
 
+  
   );
-  console.log('Pre-Entro a subscript');
 
-  if (result === 'granted')
-  {
-    console.log('Entro a subscript');
-
-    subscribeUserToPush();
-    function subscribeUserToPush() {
-      return navigator.serviceWorker.register('/sw.js')
-      .then(function(registration) {
-        const subscribeOptions = {
-          userVisibleOnly: true,
-          applicationServerKey: urlBase64ToUint8Array(
-            'BLefJtEydR57a4LR3tCWJPyt7mPH0OawfjpcVRnSiwdzf2glDu35Pg6eI9KQOQTWO4qHwWYgE5-b1OtCW4GDlp8'
-          )
-        };
-    
-        return registration.pushManager.subscribe(subscribeOptions);
-      })
-      .then(function(pushSubscription) {
-        console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
-        return pushSubscription;
-      });
-    }
-  }
 
 
 }
