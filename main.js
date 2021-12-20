@@ -53,11 +53,11 @@ function initialiseUI () {
     if(result === 'granted') 
     {
         //randomNotification();
-        console.log('GRANTED');
+        console.log('REQ PERMISION: GRANTED');
     }
     else
     {
-      console.log('DENIED');
+      console.log('REQ PERMISION: DENIED');
 
     }
   })
