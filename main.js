@@ -67,9 +67,12 @@ function initialiseUI () {
   }
 
   );
+  console.log('Pre-Entro a subscript');
 
   if (result === 'granted')
   {
+    console.log('Entro a subscript');
+
     subscribeUserToPush();
     function subscribeUserToPush() {
       return navigator.serviceWorker.register('/sw.js')
