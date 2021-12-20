@@ -95,6 +95,30 @@ function subscribeUserToPush() {
   })
   .then(function(pushSubscription) {
     console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+
+    var mysql = require('mysql');
+    var conexion = mysql.createConnection({
+      host: 'localhost',
+      database: 'celu',
+      user: 'root',
+      password: '-debianwoody853-',
+    })
+    conexion.connect(function(err){
+      if (err){
+        console.error('Error de conexion '+ err.stack);
+        return;
+      }
+      console.log('Conectado con el id ' + conexion.threadId)
+    });
+    conexion.query('SELECT * FROM login', function (error, results, fields){
+      if (error)
+        throw error;
+      results.forEach(result => {
+        console.log(result);
+      });
+    });
+
+
     return pushSubscription;
   });
 }
