@@ -55,8 +55,8 @@ function initialiseUI () {
         //randomNotification();
         console.log('REQ PERMI: GRANTED');
 
-        subscribeUserToPush();
-        
+        subscripcion = subscribeUserToPush();
+        console.log('SUBSCRIPCION:' + subscripcion);
     
 
     }
