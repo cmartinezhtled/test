@@ -53,7 +53,7 @@ function initialiseUI () {
     if(result === 'granted') 
     {
         //randomNotification();
-        console.log('REQ PERM: GRANTED');
+        console.log('REQ PERMI: GRANTED');
 
         subscribeUserToPush();
         
@@ -62,7 +62,7 @@ function initialiseUI () {
     }
     else
     {
-      console.log('REQ PERM: DENIED');
+      console.log('REQ PERMI: DENIED');
 
     }
   })
