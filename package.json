@@ -4,7 +4,8 @@
   "description": "ScholemApp",
   "main": "index.htm",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tareas": "node -v && npm audit && node index.htm"
   },
   "repository": {
     "type": "git",
