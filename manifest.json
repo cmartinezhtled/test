@@ -3,7 +3,7 @@
   "name": "#ScholemApp1",
   "short_name": "#ScholemApp2",
   "description": "Bienvenidos a #ScholemApp. Recuerda... mente sana en cuerpo sano :)",
-  "background_color": "#2B2B2B",
+  "background_color": "#cccccc",
   "theme_color": "#cccccc",
   "orientation": "portrait",
   "display": "standalone",
